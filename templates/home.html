@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+
+	{% block content%}
+	   <h1>Todos</h1>
+	   <form action="" method="post">
+	   	<input type="text" name="todo">
+	   	<input type="submit" value="add">
+	   </form>
+
+	   <ul>
+	   	 {% for todo in todos %}
+
+	   	   <li>{{ todo }}
+	   	   <a href="{{ url_for('update_todo', id=todo.id)}}">Update</a>
+	   	   <a href="{{ url_for('delete_todo', id=todo.id)}}">Delete</a>
+	   	   	
+	   	   </li>
+
+
+	     {% endfor %}
+
+	   	</ul>
+
+	  
+	   
+	{% endblock %}
